@@ -252,4 +252,7 @@ html, body {
     padding: 2vw 4vw;
     font-weight: 600;
   }
+  .mousefollower{ 
+    display: none;
+  }
 }

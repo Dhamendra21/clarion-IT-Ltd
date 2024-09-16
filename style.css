@@ -234,7 +234,7 @@ html, body {
   }
   .heading-container{
     margin-top: 15vh;
-
+    overflow-x: hidden;
   }
   .subheading .heading-container h2{
     font-size: 6.5vw;

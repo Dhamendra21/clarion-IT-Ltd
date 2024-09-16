@@ -23,6 +23,7 @@ html, body {
     background: #323232;
     color: white;
     /* background-color: #2BB454; */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,11 +47,12 @@ html, body {
 }
 
 .loading{
+  
   font-style: italic;
   text-align: start;
-  font-size: 2vw;
-  margin-left: 23vw;
-  font-weight: 300;
+  font-size: 3vw;
+  /* margin-left: 23vw; */
+  font-weight: 500;
   font-family: "Noto Sans";
 }
 
@@ -58,7 +60,9 @@ html, body {
   width: 100%;
   height: fit-content;
   overflow-y: hidden;
-  text-align: end;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
 }
 
 .main{
@@ -69,7 +73,7 @@ html, body {
 }
 .page1{
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f7f7f7;
 }
 .back{
@@ -131,6 +135,7 @@ html, body {
 }
 
 .heading-container h1{
+  cursor: pointer;
   -webkit-text-stroke: 2px black;
   font-size: 6.5vw;
   line-height: 1.1;
@@ -163,7 +168,7 @@ html, body {
 }
 .heading-container p{
   font-size: 1.2vw;
-  margin-top: 0.7vw;
+  margin-top: 2vw;
   margin-left: 0.5vw;
   width: 40%;
   color: #565656;
@@ -173,7 +178,39 @@ html, body {
   /* margin: auto; */
 }
 
-.mousefollower{
-  
+.buttons{
+  display: flex;
+  gap: 2vw;
+  margin-top: 2vw;
+  height: fit-content;
+  overflow-y: hidden;
+  text-transform: uppercase;
+}
+
+.btn{
+  padding: 0.7vw 1.5vw  ;
+  border: 1px solid seagreen;
+  border-radius: 3px;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn1{
+  background-color: #000;
+  color: white;
+}
+.btn1:hover{
+  border: 1px solid black;
+  background-color: #ffff;
+  color: #000;
+  transition: ease-in 0.2s;
+}
+.btn2:hover{
+  background-color: seagreen;
+  color: white;
+  transition: ease-in 0.2s;
+}
+
+.mousefollower{ 
   scale:1.5
 }

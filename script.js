@@ -1,6 +1,11 @@
 function loadingAniation() {
     let tl = gsap.timeline();
+
     tl.from(".loading, .loader-img-div img", {
+        onStart :()=>{
+            let window = document.body
+            window.style.overflow = "hidden" 
+        },
         y: 500,
         duration: 1.3,
         stagger: 0.5,
@@ -12,7 +17,6 @@ function loadingAniation() {
                     clearInterval(counter);
                 }
                 document.querySelector(".counterSpan").textContent = count;
-                // console.log(count)
             }, 20);
         },
     });
@@ -21,6 +25,10 @@ function loadingAniation() {
         opacity: 0,
         duration: 1.3,
         display: "none",
+        onComplete:()=>{
+            let window = document.body
+            window.style.overflow = "initial" 
+        }
     });
     tl.from(".page1", {
         // delay:-1,
@@ -28,6 +36,15 @@ function loadingAniation() {
         y: 1600,
         ease: "power3.out",
     });
+    tl.from(".heading-container h1, .heading-container h2, .heading-container p ", {
+        y:500,
+        stagger:0.5,
+        duration:1,
+        ease:"expo.out"
+        })
+    tl.from(".btn", {
+            opacity:0
+        });
    
 }
 
@@ -41,7 +58,11 @@ Shery.hoverWithMediaCircle(".hero" /* Element to target.*/, {
     images: ["./assets/it-img-5.webp","./assets/it-img-6.webp"] /*OR*/,
     // videos: ["./0.mp4", "/1.mp4"],
   })
-
+  Shery.makeMagnet(".magnet" /* Element to target.*/, {
+    //Parameters are optional.
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
 let lendingpageHero = [
     {
         heading1: "WE EMPOWER YOUR BUSINESS",
@@ -71,6 +92,9 @@ let green = document.querySelector(".green")
 
 let container = document.querySelector(".container");
 let hero =  document.querySelector(".hero")
+
+
+
 let updateContent = (index) => {
     let content = lendingpageHero[index];
 
@@ -85,28 +109,26 @@ let updateContent = (index) => {
         duration:1,
         ease:"expo.out"
         })
-    
+    gsap.from(".btn", {
+        // opacity:0,
+        y:500
+    });
 };
 
 container.addEventListener("click", () => {
     updateContent(initalindex);
     initalindex = (initalindex + 1) % lendingpageHero.length;
-    let changeContent = setInterval(()=>{
-        updateContent(initalindex);
-        initalindex = (initalindex + 1) % lendingpageHero.length;
-        
-    },10000)
-    changeContent()
-
-});
-
+    
     
 
-
+});
+// let changeContent = setInterval(()=>{
+//     updateContent(initalindex);
+//     initalindex = (initalindex + 1) % lendingpageHero.length;
+    
+// },10000)
 
 
       
 
 loadingAniation();
-
-

@@ -12,7 +12,7 @@ html, body {
 
 @font-face {
   font-family: 'Noto Sans';
-  src: url('./fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf');
+  src: url('./fonts/NotoSans-VariableFont_wdth\,wght.ttf');
   
 }
 
@@ -70,7 +70,7 @@ html, body {
 .page1{
   width: 100%;
   height: 100vh;
-  background-color: #d1d1d1;
+  background-color: #f7f7f7;
 }
 .back{
     height: 100%;
@@ -118,34 +118,62 @@ html, body {
     font-size: 2rem;
 }
 .container{
-  padding: 4vw 7.5vw;
+  padding: 8vw 4vw 7.5vw 4vw;
+  /* padding-top: 4vw; */
+  /* width: 70%; */
 }
 
 .heading-container{
-  width: 65%;
- 
+  width: 100%;
+  height: fit-content;
+  overflow-y: hidden;
+  text-align: center;
 }
 
 .heading-container h1{
-  font-size: 7vw;
+  -webkit-text-stroke: 2px black;
+  font-size: 6.5vw;
   line-height: 1.1;
-  letter-spacing: -4px;
-  color: rgb(34, 34, 34);
+  font-weight: 600;
+  letter-spacing: -0.5vw;
+  color: rgba(0, 0, 0, 0);
+  text-wrap: balance;
   /* -webkit-text-stroke: 2px black; */
-  
-}
-.heading-container h1 span{
-  color: #2BB454;
-  /* font-style: italic; */
 }
 
+.subheading .heading-container{
+  margin: 0;
+  text-align: start;
+}
+
+/* .green{
+  color: #2BB454;
+  /* font-style: italic; 
+} */
+
 .heading-container h2{
-  margin-top: 2vw;
-  font-size: 2vw;
+  margin-top: 12vw;
+  margin-left: 0.5vw;
+  font-size: 2.7vw;
+  width: 40%;
   color: rgb(41, 41, 41);
   letter-spacing: -1px;
+  line-height: 1;
+  letter-spacing: -0.1vw;
 }
+.heading-container p{
+  font-size: 1.2vw;
+  margin-top: 0.7vw;
+  margin-left: 0.5vw;
+  width: 40%;
+  color: #565656;
+  /* text-align: center ; */
+  font-weight: 600;
+  text-wrap: balance;
+  /* margin: auto; */
+}
+
 .mousefollower{
-  /* display:none */
+  
   scale:1.5
 }

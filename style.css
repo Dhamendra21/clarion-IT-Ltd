@@ -214,3 +214,41 @@ html, body {
 .mousefollower{ 
   scale:1.5
 }
+@media (max-width:640px) {
+  .loader-img-div img{
+    width: 85vw;
+  }
+  .loading{
+    font-size: 3vh;
+    font-weight: 500;
+    font-family: "Noto Sans";
+  }
+  .left img{
+    height: 8vw;
+    margin-top: 5px;
+  }
+  .heading-container .hero{
+    font-size: 5.5vh;
+    text-align: start;
+  }
+  .heading-container{
+    margin-top: 15vh;
+
+  }
+  .subheading .heading-container h2{
+    font-size: 6.5vw;
+    margin-top: 15vh;
+    width: 100%;
+    text-wrap: balance;
+
+  }
+  .heading-container p{
+    font-size: 2vh;
+    width: 100%;
+    margin: 5vw 0;
+  }
+  .btn1, .btn2{
+    padding: 2vw 4vw;
+    font-weight: 600;
+  }
+}

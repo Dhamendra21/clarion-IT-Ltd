@@ -132,3 +132,152 @@ container.addEventListener("click", () => {
       
 
 loadingAniation();
+
+
+
+
+
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector(".main"),
+  smooth: true
+});
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(".main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+  },
+  pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+});
+
+
+
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
+
+
+
+var tl1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".page2",
+    scroller: ".main",
+    scrub: 3,
+    // markers:true,
+    start: "top 80%",
+    end: "10%",
+    duration: 1
+
+  }
+})
+tl1.to(".head h1", {
+  x: -100,
+  duration: 0.3,
+  stagger: 1
+
+}, "anim")
+tl1.to(".head h2", {
+  x: 100,
+  duration: 0.3,
+  stagger: 1
+
+
+}, "anim")
+
+tl1.to(".page2 video", {
+  width: "100%",
+
+})
+
+
+
+
+function textBreak() {
+
+  var h3 = document.querySelector("h3");
+
+  var h3Text = h3.textContent
+
+  var splittedText = h3Text.split("")
+
+  // console.log(splittedText);
+  var clutter = ""
+
+  splittedText.forEach(function (e) {
+    clutter += `<span>${e}</span>`
+  })
+
+
+  h3.innerHTML = clutter
+}
+textBreak()
+
+
+gsap.from("h3 span", {
+  y: 100,
+  x: 100,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.03
+
+})
+
+var tl2 = gsap.timeline({
+
+
+  scrollTrigger: {
+    trigger: ".page3",
+    scroller: ".main",
+    scrub: 3,
+    start: "top 30%",
+    end: "-10%",
+
+  }
+
+})
+
+tl2.from(".right #img-1", {
+  x: -500,
+  duration: 0.8,
+  scale: 1.5
+
+
+
+})
+
+tl2.from(".right #img-2", {
+  x: 500,
+  duration: 2
+})
+
+
+tl2.from(".side-btn h2 ", {
+  scale: -1.1,
+  duration: 2
+})
+
+
+
+
+
+gsap.to(".slider h2", {
+  x: -500,
+  repeat: -1,
+  ease: "linear",
+  duration: 5
+})
+
+
+
+
